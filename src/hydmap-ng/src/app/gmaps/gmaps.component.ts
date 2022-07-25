@@ -66,9 +66,9 @@ export class GmapsComponent implements OnInit {
     }
   }
 
-  openInfo(marker: any, content: Hydrant, infoWindo :MapInfoWindow) {
+  openInfo(marker: any, content: Hydrant, infoWindow :MapInfoWindow) {
     console.log(content)
-    selectedMarker: content
-    infoWindo.open(marker)
+    this.selectedMarker = content
+    infoWindow.open(marker)
   }
 }
