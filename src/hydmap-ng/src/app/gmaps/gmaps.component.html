@@ -1,0 +1,10 @@
+<google-map height="500px" width="100%" [zoom]="zoom" [center]="center" [options]="options"
+    (mapClick)="addMarker($event)">
+
+    <map-marker #markerElement="mapMarker" *ngFor="let marker of markers" [position]="marker.latLng"
+        [options]="marker.options" [icon]="icons[marker.type].icon"
+        (mapClick)="openInfo(markerElement, marker, infoWindow)"></map-marker>
+    <map-info-window #infoWindow="mapInfoWindow">
+        <app-marker-details [hydrant]="selectedMarker"></app-marker-details>
+    </map-info-window>
+</google-map>
